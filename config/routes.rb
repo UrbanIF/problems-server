@@ -8,8 +8,8 @@ Problems::Application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
-resources :problems, only: [:index, :show], controller: 'base_problem_controller'
   namespace :api do
+  resources :problems, only: [:index, :show], controller: 'base_problems'
 
     resources :categories, only: [:index, :show] do
       resources :subcategories, only: [:index] do
