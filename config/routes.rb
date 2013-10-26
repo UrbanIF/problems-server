@@ -8,6 +8,16 @@ Problems::Application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
+resources :problems, only: [:index, :show], controller: 'base_problem_controller'
+  namespace :api do
+
+    resources :categories, only: [:index, :show] do
+      resources :subcategories, only: [:index] do
+        resources :problems
+      end
+    end
+  end
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
@@ -39,7 +49,7 @@ Problems::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
