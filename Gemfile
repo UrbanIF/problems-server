@@ -40,3 +40,29 @@ gem 'jbuilder', '~> 1.2'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'devise'
+gem 'figaro'
+gem 'haml-rails'
+gem 'mongoid', '~> 4', :github=>"mongoid/mongoid"
+gem 'simple_form', '>= 3.0.0.rc'
+gem 'thin'
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
+  gem 'html2haml'
+  gem 'quiet_assets'
+end
+
+group :development, :test do
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'database_cleaner', '1.0.1'
+  gem 'email_spec'
+  gem 'mongoid-rspec', '>= 1.6.0', :github=>"evansagge/mongoid-rspec"
+end
+
