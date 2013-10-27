@@ -220,13 +220,13 @@ header {
     width: 310px;
     height: 238px;
     &.image-1 {
-      background: url(asset-path('pictures/1.png', image)) no-repeat;
+      background: asset-url('pictures/1.png') no-repeat;
     }
     &.image-2 {
-      background: url(asset-path('pictures/2.png', image)) no-repeat;
+      background: asset-url('pictures/2.png') no-repeat;
     }
     &.image-3 {
-      background: url(asset-path('pictures/3.png', image)) no-repeat;
+      background: asset-url('pictures/3.png') no-repeat;
     }
   }
   .description {
