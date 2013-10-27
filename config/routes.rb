@@ -10,6 +10,7 @@ Problems::Application.routes.draw do
   #   get 'products/:id' => 'catalog#view'
 
   root 'main#index'
+
   namespace :api do
   resources :problems, only: [:index, :show], controller: 'base_problems'
 

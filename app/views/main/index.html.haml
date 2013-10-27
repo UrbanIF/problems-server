@@ -1,2 +1,83 @@
-%h1 Main#index
-%p Find me in app/views/main/index.html.haml
+.container
+  %h1.upper Наше місто
+  %h1.upper Івано-Франківськ
+  %p.text.upper
+    This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis.
+    dapibus condimentum sit amet a augue. Sed non n
+  .child-block
+    .title.upper
+      Поданих проблем
+    .count
+      2358
+
+  .child-block
+    .title.upper
+      Вирішених проблем
+    .count
+      443
+
+  .child-block
+    .title.upper
+      Зареєстрованих користувачів
+    .count
+      2358
+
+.container-guide
+  .container
+    %h1 Що можна робити на порталі?
+    .child-block
+      .image-place.image-1
+      .description
+        .title.upper
+          Повідомте про проблему
+        .text
+          та отримайте відповідь
+          протягом 8 днів
+        = link_to "детальніше", root_path, class: 'details upper'
+      = link_to "повідомити", root_path, class: 'button red fixed'
+
+    .child-block
+      .image-place.image-2
+      .description
+        .title.upper
+          Повідомте про проблему
+        .text
+          та отримайте відповідь
+          протягом 8 днів
+        = link_to "детальніше", root_path, class: 'details upper'
+      = link_to "оцінити", root_path, class: 'button red fixed'
+
+    .child-block
+      .image-place.image-3
+      .description
+        .title.upper
+          Повідомте про проблему
+        .text
+          та отримайте відповідь
+          протягом 8 днів
+        = link_to "детальніше", root_path, class: 'details upper'
+      = link_to "знайти", root_path, class: 'button red fixed'
+.container
+  %h1.blue Про що можна повідомити?
+  .categories
+    .category-block>
+      .icon
+      = link_to "громадький транспорт", root_path, class: 'category-link upper'
+    .category-block>
+      .icon
+      = link_to "багатоповерхова забудова", root_path, class: 'category-link upper'
+    .category-block>
+      .icon
+      = link_to "парк", root_path, class: 'category-link upper'
+    .category-block>
+      .icon
+      = link_to "заклади соціального захисту", root_path, class: 'category-link upper'
+    .category-block>
+      .icon
+      = link_to "громадький транспорт", root_path, class: 'category-link upper'
+    .category-block>
+      .icon
+      = link_to "парк", root_path, class: 'category-link upper'
+    .category-block>
+      .icon
+      = link_to "багатоповерхова забудова", root_path, class: 'category-link upper'

@@ -1,6 +1,9 @@
-%nav
-  = link_to "Home", root_path, class: 'home active'
-  \/
-  = link_to "Problems map", "link", class: 'map'
-  \/
-  = link_to "About project", root_path, class: 'about'
+.header-content
+  %nav
+    = link_to "Головна", root_path, class: 'home active'
+    \/
+    = link_to "Карта проблем", "link", class: 'map'
+    \/
+    = link_to "Про проект", root_path, class: 'about'
+
+  = link_to "вхід", root_path, class: 'button gray login'
