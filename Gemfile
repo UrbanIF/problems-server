@@ -59,11 +59,11 @@ group :development do
   gem 'quiet_assets'
 end
 
-# group :development, :test, :production do
+group :development, :test, :production do
   gem 'factory_girl_rails'
   gem 'rspec-rails'
   gem 'faker'
-# end
+end
 
 group :test do
   gem 'database_cleaner', '1.0.1'

@@ -6,6 +6,6 @@ class ProblemSerializer < ActiveModel::Serializer
   end
 
   def location
-    object.location.to_hsh(:lng, :lat).to_json
+    object.location.to_hsh(:lng, :lat)
   end
 end
