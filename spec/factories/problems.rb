@@ -5,7 +5,7 @@ FactoryGirl.define do
     title Faker::Name.name
     status 'new'
     address Faker::Address.street_address(include_secondary = false)
-    location ({lat: Faker::Address.longitude, lng: Faker::Address.latitude})
+    location ({lng:Faker::Address.longitude, lat: Faker::Address.latitude})
     subcategory_id Faker::Number.digit
     description Faker::Lorem.sentence(10)
   end

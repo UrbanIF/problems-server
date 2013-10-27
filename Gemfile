@@ -59,7 +59,7 @@ group :development do
   gem 'quiet_assets'
 end
 
-group :development, :test do
+group :development, :test, :production do
   gem 'factory_girl_rails'
   gem 'rspec-rails'
   gem 'faker'
@@ -71,3 +71,5 @@ group :test do
   gem 'email_spec'
   gem 'mongoid-rspec', '>= 1.6.0', :github=>"evansagge/mongoid-rspec"
 end
+
+gem 'rails_12factor' #heroku

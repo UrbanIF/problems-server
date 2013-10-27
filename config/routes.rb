@@ -16,7 +16,7 @@ Problems::Application.routes.draw do
 
     resources :categories, only: [:index, :show] do
       resources :subcategories, only: [:index] do
-        resources :problems
+        resources :problems, only: [:index, :show, :create]
       end
     end
   end
