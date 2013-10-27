@@ -42,9 +42,11 @@ describe Api::ProblemsController do
         params = {title: problem.title,
                   address: problem.address,
                   description: problem.description,
-                  location: problem.location.to_hsh(:lng, :lat)
+                  location: problem.location.to_hsh(:lng, :lat),
+                  category_id: category.id.to_s,
+                  subcategory_id: category.subcategories.first.id.to_s
                 }
-        post :create, {problem: params, category_id: category.id.to_s, subcategory_id: category.subcategories.first.id.to_s}
+        post :create, params
       end
       it "returns http 201" do
         response.response_code.should == 201
@@ -57,9 +59,11 @@ describe Api::ProblemsController do
         params = {title: problem.title,
                   address: problem.address,
                   description: problem.description,
-                  location: problem.location.to_hsh(:lng, :lat)
+                  location: problem.location.to_hsh(:lng, :lat),
+                   category_id: 'non existing',
+                    subcategory_id: 'non existing'
                 }
-        post :create, {problem: params, category_id: 'non existing', subcategory_id: 'non existing'}
+        post :create, params
       end
       it "returns http 404" do
         response.response_code.should == 404

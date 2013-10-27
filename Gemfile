@@ -71,3 +71,5 @@ group :test do
   gem 'email_spec'
   gem 'mongoid-rspec', '>= 1.6.0', :github=>"evansagge/mongoid-rspec"
 end
+
+gem 'rails_12factor' #heroku

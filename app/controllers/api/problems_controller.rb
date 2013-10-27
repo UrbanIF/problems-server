@@ -51,6 +51,6 @@ class Api::ProblemsController < Api::BaseController
     end
 
     def problem_params
-      params.require(:problem).permit(:title, :subcategory_id, :address, :description, location: [:lng, :lat])
+      params.permit(:title, :subcategory_id, :address, :description, location: [:lng, :lat])
     end
 end
