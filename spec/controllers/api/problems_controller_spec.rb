@@ -18,7 +18,6 @@ describe Api::ProblemsController do
     end
   end
 
-
  context 'show one' do
     describe 'GET #show' do
       before do
@@ -32,7 +31,39 @@ describe Api::ProblemsController do
       it "returns http 200" do
         response.response_code.should == 200
       end
+    end
+  end
 
+  context 'create' do
+    describe 'POST #create' do
+      before do
+        category = FactoryGirl.create(:category)
+        problem = FactoryGirl.build(:problem)
+        params = {title: problem.title,
+                  address: problem.address,
+                  description: problem.description,
+                  location: problem.location.to_hsh(:lng, :lat)
+                }
+        post :create, {problem: params, category_id: category.id.to_s, subcategory_id: category.subcategories.first.id.to_s}
+      end
+      it "returns http 201" do
+        response.response_code.should == 201
+      end
+    end
+
+    describe 'POST #create to non existing subcategory' do
+      before do
+        problem = FactoryGirl.build(:problem)
+        params = {title: problem.title,
+                  address: problem.address,
+                  description: problem.description,
+                  location: problem.location.to_hsh(:lng, :lat)
+                }
+        post :create, {problem: params, category_id: 'non existing', subcategory_id: 'non existing'}
+      end
+      it "returns http 404" do
+        response.response_code.should == 404
+      end
     end
   end
 

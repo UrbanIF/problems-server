@@ -1,7 +1,6 @@
 class Api::ProblemsController < Api::BaseController
 
   def index
-
     serialized_problems = []
     response = format_response
     Problem.where(subcategory_id:response[:subcategory][:id]).each do |problem|
@@ -19,7 +18,21 @@ class Api::ProblemsController < Api::BaseController
     respond_with response
   end
 
+  def create
+    problem = Problem.new(problem_params)
+    problem.subcategory_id = check_subcategorty
+    problem.save!
+    render json: problem, status: 201
+  end
+
   protected
+    def check_subcategorty
+      category = Category.find(params[:category_id])
+      subcategory = category.subcategories.find(params[:subcategory_id])
+
+      subcategory.id.to_s
+    end
+
     def format_response
       category = Category.find(params[:category_id])
       subcategory = category.subcategories.find(params[:subcategory_id])
@@ -35,5 +48,9 @@ class Api::ProblemsController < Api::BaseController
       }
 
       response
+    end
+
+    def problem_params
+      params.require(:problem).permit(:title, :subcategory_id, :address, :description, location: [:lng, :lat])
     end
 end

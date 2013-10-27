@@ -5,7 +5,7 @@ class Problem
 
   field :title, type: String
   field :subcategory_id, type: String
-  field :status, type: String
+  field :status, type: String, default: 'new'
   field :address, type: String
   field :description, type: String
   field :location, type: Point
